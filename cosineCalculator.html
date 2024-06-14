@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cosine rule calculator</title>
+    <style>
+       *{
+           padding:0;
+           margin:0;
+       } 
+       body{
+           background: gray;
+           color: white;
+       }
+    fieldset{
+        color:white;
+      background:black;
+    } 
+    .solvingBoard{
+        background:black;
+        color:white;
+        border-radius:40px;
+        text-align:center;
+        margin-top:100px;
+    }
+  legend{
+    color: white;
+    background: green;
+  }
+.myWork {
+  background:green;
+}  
+    </style>
+</head>
+
+  <body>
+    
+  <h1>cosine calculator</h1>  
+  <h1> where  <br/>   a<sup>2</sup>= b<sup>2</sup> + c<sup>2</sup>- 2bc cosA
+        
+        </h1>
+   
+  
+    <fieldset>
+        <legend>input your values here</legend>
+        
+      <h3>b =</h3><input class="val-b">
+      <h3>c =</h3><input class="val-c">
+      <h3>A =</h3><input class="val-A">
+      <button onclick="solve()"> solve for a</button>
+      </fieldset>
+      
+  
+  <div class="solvingBoard">
+    <h1 class="myWork">simple web app developed by Richard</h1> 
+    <h3>
+      Enter your value above to see your 
+      solving here on this board
+    </h3>
+  </div>
+     <script>
+      
+    
+       function solve(){
+          let b = document.querySelector(".val-b").value;
+      let c = document.querySelector(".val-c").value;
+      let rA = document.querySelector(".val-A").value;  
+   let A =rA* Math.PI/180;
+         document.querySelector(".solvingBoard").innerHTML = `
+         <h2>b = ${b} 
+       <br/>c = ${c}
+       <br/>A = ${rA} <sup>o</sup>
+  
+ where  <br/>   a<sup>2</sup>= b<sup>2</sup> + c<sup>2</sup>- 2bc cosA<sup>o</sup>
+  <br/>
+  a<sup>2</sup>= ${b}<sup>2</sup> +${c} <sup>2</sup>- 2 x ${b} x ${c} cos${rA}<sup>o</sup>
+  <br/>
+  
+    a<sup>2</sup>= ${b**2} + ${c**2} - 2 x ${b*c} x  ${Math.cos(A)}
+  <br/>
+   a<sup>2</sup>= ${b**2+c**2} - ${2*b*c} x  ${Math.cos(A)}  
+   <br/>
+      a<sup>2</sup>= ${b**2+c**2} - ${2*b*c*Math.cos(A)}  
+   <br/>   
+   
+   a<sup>2</sup>= ${b**2+c**2-2*b*c*Math.cos(A)}  
+   <br/>   
+ √  a<sup>2</sup>=√ ${b**2+c**2-2*b*c*Math.cos(A)}  
+   <br/>   
+   a = √ ${b**2+c**2-2*b*c*Math.cos(A)}  
+ <br/>
+ a =  ${Math.sqrt(b**2+c**2-2*b*c*Math.cos(A))} 
+ <br/> 
+ a = ${Math.sqrt(b**2+c**2-2*b*c*Math.cos(A)).toFixed(2)} 
+           <br/>
+           or
+         </br/>
+a = 
+${Math.sqrt(b**2+c**2-2*b*c*Math.cos(A)).toFixed(0)} 
+     </h2>  `
+       }
+       
+     
+       </script>
+       
+</body>
+</html>
